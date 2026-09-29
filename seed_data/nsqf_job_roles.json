@@ -1,0 +1,804 @@
+{
+  "_notice": "ILLUSTRATIVE SEED DATA — NOT OFFICIAL. Hand-curated for the SIH 2026 prototype demo. To be replaced with official NSDC/NCVET/NCS Qualification Packs (QPs) and NCS role data. No salary, placement or scheme-eligibility figures are claimed — self-employment potential and demand are qualitative (low/medium/high). Scheme names are POINTERS ONLY — always verify current scheme names and eligibility on official portals (skillindia.gov.in, nsdcindia.org, ncs.gov.in, pmmody.gov.in / MoSJE).",
+  "_source_status": "MOCK / SEED — needs verification against NCVET QP list and NCS occupation list before any real deployment.",
+  "roles": [
+    {
+      "id": "organic-farming-assistant",
+      "job_role": "Organic Farming Assistant",
+      "sector": "agriculture",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["farming", "agriculture", "organic", "vegetables"],
+      "self_employment_potential": "high",
+      "physical_demand": "high",
+      "related_family_occupations": ["farming", "vegetable_selling"],
+      "skill_tags": ["farming", "organic", "compost", "vegetables", "irrigation"],
+      "core_skills": [
+        {"name": "Organic compost & manure preparation", "tag": "compost"},
+        {"name": "Vegetable & crop care", "tag": "vegetables"},
+        {"name": "Drip/sprinkler irrigation basics", "tag": "irrigation"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM-AJAY GIA skilling component (verify with MoSJE)"]
+    },
+    {
+      "id": "dairy-farm-worker",
+      "job_role": "Dairy Farm Worker",
+      "sector": "agriculture",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["dairy", "farming", "animal_husbandry"],
+      "self_employment_potential": "high",
+      "physical_demand": "high",
+      "related_family_occupations": ["dairy", "farming", "cattle_rearing"],
+      "skill_tags": ["dairy", "milking", "cattle", "feed", "hygiene"],
+      "core_skills": [
+        {"name": "Clean milking practices", "tag": "milking"},
+        {"name": "Cattle feed & health basics", "tag": "feed"},
+        {"name": "Milk hygiene & handling", "tag": "hygiene"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Dairy Entrepreneurship / state dairy schemes (verify)"]
+    },
+    {
+      "id": "poultry-farm-technician",
+      "job_role": "Poultry Farm Technician",
+      "sector": "agriculture",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["poultry", "farming", "animal_husbandry"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["poultry", "farming"],
+      "skill_tags": ["poultry", "feeding", "vaccination", "hygiene", "brooding"],
+      "core_skills": [
+        {"name": "Poultry feeding & brooding", "tag": "feeding"},
+        {"name": "Basic vaccination support", "tag": "vaccination"},
+        {"name": "Coop hygiene & maintenance", "tag": "hygiene"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "State animal-husbandry entrepreneurship schemes (verify)"]
+    },
+    {
+      "id": "farm-machinery-operator",
+      "job_role": "Farm Machinery Operator (Tractor & Implements)",
+      "sector": "agriculture",
+      "nsqf_level": 4,
+      "min_education": "grade8",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["farming", "tractor", "machinery", "harvest"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["farming", "tractor_operation", "driving"],
+      "skill_tags": ["tractor", "driving", "machinery", "maintenance", "farming"],
+      "core_skills": [
+        {"name": "Tractor operation & safety", "tag": "tractor"},
+        {"name": "Implement attach & basic maintenance", "tag": "maintenance"},
+        {"name": "Field operation planning", "tag": "farming"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Custom Hiring Centre / mechanisation schemes (verify)"]
+    },
+    {
+      "id": "mushroom-cultivation-entrepreneur",
+      "job_role": "Mushroom Cultivation Entrepreneur",
+      "sector": "agriculture",
+      "nsqf_level": 3,
+      "min_education": "grade5",
+      "duration_hours": 160,
+      "typical_local_demand_tags": ["mushroom", "vegetables", "farming", "food_processing"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["farming", "vegetable_selling"],
+      "skill_tags": ["mushroom", "compost", "humidity", "harvesting", "packing"],
+      "core_skills": [
+        {"name": "Spawn & compost preparation", "tag": "compost"},
+        {"name": "Humidity & temperature control", "tag": "humidity"},
+        {"name": "Harvesting & packing", "tag": "packing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "MUDRA loan (verify eligibility)", "State horticulture schemes (verify)"]
+    },
+    {
+      "id": "food-processing-assistant",
+      "job_role": "Food Processing Assistant (Fruits & Vegetables)",
+      "sector": "food_processing",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["food_processing", "agriculture", "vegetables", "retail"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["farming", "cooking", "vegetable_selling"],
+      "skill_tags": ["food_processing", "sorting", "packing", "hygiene", "preservation"],
+      "core_skills": [
+        {"name": "Sorting & grading of produce", "tag": "sorting"},
+        {"name": "Food safety & hygiene", "tag": "hygiene"},
+        {"name": "Basic preservation & packing", "tag": "preservation"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PMFME / food-processing micro-enterprise schemes (verify)"]
+    },
+    {
+      "id": "bakery-confectionery-assistant",
+      "job_role": "Bakery & Confectionery Assistant",
+      "sector": "food_processing",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["bakery", "food_processing", "retail", "hospitality"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["cooking", "sweet_making", "farming"],
+      "skill_tags": ["bakery", "baking", "mixing", "hygiene", "packing"],
+      "core_skills": [
+        {"name": "Dough mixing & baking basics", "tag": "baking"},
+        {"name": "Oven & equipment handling", "tag": "mixing"},
+        {"name": "Hygiene & packing", "tag": "hygiene"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "dairy-processing-assistant",
+      "job_role": "Dairy Processing Assistant",
+      "sector": "food_processing",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 220,
+      "typical_local_demand_tags": ["dairy", "food_processing"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["dairy", "cooking", "farming"],
+      "skill_tags": ["dairy", "pasteurization", "hygiene", "packaging", "testing"],
+      "core_skills": [
+        {"name": "Milk testing & handling", "tag": "testing"},
+        {"name": "Pasteurisation basics", "tag": "pasteurization"},
+        {"name": "Packaging & hygiene", "tag": "hygiene"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Dairy processing schemes (verify)"]
+    },
+    {
+      "id": "traditional-food-products-maker",
+      "job_role": "Traditional Food Products Maker (Pickle, Papad, Spice)",
+      "sector": "food_processing",
+      "nsqf_level": 2,
+      "min_education": "none",
+      "duration_hours": 120,
+      "typical_local_demand_tags": ["food_processing", "pickling", "spices", "retail"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["cooking", "farming", "vegetable_selling"],
+      "skill_tags": ["pickling", "spices", "food_processing", "packing", "hygiene"],
+      "core_skills": [
+        {"name": "Pickle/papad preparation recipes", "tag": "pickling"},
+        {"name": "Spice grinding & storage", "tag": "spices"},
+        {"name": "Packaging & labelling basics", "tag": "packing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PMFME micro-food enterprise (verify)", "MUDRA loan (verify)", "PM-AJAY GIA (verify with MoSJE)"]
+    },
+    {
+      "id": "mason-general",
+      "job_role": "Mason (General)",
+      "sector": "construction",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["construction", "housing", "mason"],
+      "self_employment_potential": "high",
+      "physical_demand": "high",
+      "related_family_occupations": ["mason", "construction", "labour"],
+      "skill_tags": ["mason", "brickwork", "plaster", "measurement", "construction"],
+      "core_skills": [
+        {"name": "Brick/block laying", "tag": "brickwork"},
+        {"name": "Plastering & finishing", "tag": "plaster"},
+        {"name": "Measurement & estimation", "tag": "measurement"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM Vishwakarma (verify eligibility)", "RPL certification (verify)"]
+    },
+    {
+      "id": "bar-bender-steel-fixer",
+      "job_role": "Bar Bender & Steel Fixer",
+      "sector": "construction",
+      "nsqf_level": 2,
+      "min_education": "none",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["construction", "housing", "infrastructure"],
+      "self_employment_potential": "medium",
+      "physical_demand": "high",
+      "related_family_occupations": ["construction", "labour", "iron_work"],
+      "skill_tags": ["steel", "bending", "binding", "measurement", "construction"],
+      "core_skills": [
+        {"name": "Bar cutting & bending", "tag": "bending"},
+        {"name": "Steel fixing & binding", "tag": "binding"},
+        {"name": "Reading simple drawings", "tag": "measurement"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "RPL certification (verify)"]
+    },
+    {
+      "id": "painter-general",
+      "job_role": "Painter (General)",
+      "sector": "construction",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 220,
+      "typical_local_demand_tags": ["construction", "housing", "painting"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["painting", "construction", "labour"],
+      "skill_tags": ["painting", "surface_prep", "mixing", "finishing"],
+      "core_skills": [
+        {"name": "Surface preparation", "tag": "surface_prep"},
+        {"name": "Paint mixing & application", "tag": "mixing"},
+        {"name": "Finishing & touch-up", "tag": "finishing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM Vishwakarma (verify)"]
+    },
+    {
+      "id": "plumber-domestic",
+      "job_role": "Plumber (Domestic)",
+      "sector": "plumbing",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 260,
+      "typical_local_demand_tags": ["plumbing", "housing", "construction", "sanitation"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["plumbing", "construction", "labour"],
+      "skill_tags": ["plumbing", "pipes", "fitting", "sanitation", "repair"],
+      "core_skills": [
+        {"name": "Pipe fitting & joining", "tag": "fitting"},
+        {"name": "Tap/tank installation & repair", "tag": "repair"},
+        {"name": "Sanitation & drainage basics", "tag": "sanitation"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM Vishwakarma (verify)"]
+    },
+    {
+      "id": "electrician-domestic",
+      "job_role": "Electrician (Domestic)",
+      "sector": "electrical",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 320,
+      "typical_local_demand_tags": ["electrical", "housing", "construction", "repair"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["electrical", "repair", "construction"],
+      "skill_tags": ["electrical", "wiring", "repair", "safety", "testing"],
+      "core_skills": [
+        {"name": "House wiring & safety", "tag": "wiring"},
+        {"name": "Fault finding & repair", "tag": "repair"},
+        {"name": "Multimeter/testing basics", "tag": "testing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "RPL certification (verify)"]
+    },
+    {
+      "id": "solar-panel-installation-technician",
+      "job_role": "Solar Panel Installation Technician",
+      "sector": "electrical",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["solar", "electrical", "green_energy", "infrastructure"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["electrical", "construction", "repair"],
+      "skill_tags": ["solar", "electrical", "installation", "wiring", "maintenance"],
+      "core_skills": [
+        {"name": "Panel mounting & installation", "tag": "installation"},
+        {"name": "DC/AC wiring basics", "tag": "wiring"},
+        {"name": "Cleaning & preventive maintenance", "tag": "maintenance"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Solar/Rooftop schemes (verify)", "Suryamitra-style training (verify current name)"]
+    },
+    {
+      "id": "domestic-appliance-repair-technician",
+      "job_role": "Domestic Appliance Repair Technician",
+      "sector": "electrical",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 260,
+      "typical_local_demand_tags": ["repair", "electrical", "retail", "service"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["repair", "electrical", "shop_keeping"],
+      "skill_tags": ["repair", "appliance_repair", "electrical", "testing", "customer_service"],
+      "core_skills": [
+        {"name": "Fan/mixer/grinder repair", "tag": "appliance_repair"},
+        {"name": "Basic electrical safety & testing", "tag": "testing"},
+        {"name": "Customer handling & billing", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "sewing-machine-operator",
+      "job_role": "Sewing Machine Operator",
+      "sector": "apparel",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["apparel", "garments", "textiles", "manufacturing"],
+      "self_employment_potential": "medium",
+      "physical_demand": "low",
+      "related_family_occupations": ["tailoring", "weaving", "embroidery"],
+      "skill_tags": ["sewing", "stitching", "cutting", "measurement", "machine_operation"],
+      "core_skills": [
+        {"name": "Sewing machine operation", "tag": "machine_operation"},
+        {"name": "Stitching & seam quality", "tag": "stitching"},
+        {"name": "Fabric cutting basics", "tag": "cutting"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "RPL certification (verify)", "PM-AJAY GIA (verify with MoSJE)"]
+    },
+    {
+      "id": "hand-embroidery-artisan",
+      "job_role": "Hand Embroidery Artisan",
+      "sector": "apparel",
+      "nsqf_level": 2,
+      "min_education": "none",
+      "duration_hours": 160,
+      "typical_local_demand_tags": ["embroidery", "apparel", "handicraft", "textiles"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["embroidery", "weaving", "tailoring"],
+      "skill_tags": ["embroidery", "stitching", "design", "measurement"],
+      "core_skills": [
+        {"name": "Embroidery stitches & motifs", "tag": "embroidery"},
+        {"name": "Design tracing & layout", "tag": "design"},
+        {"name": "Finishing & quality check", "tag": "stitching"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Handicrafts/handloom schemes (verify)", "PM Vishwakarma (verify)"]
+    },
+    {
+      "id": "tailor-basic",
+      "job_role": "Tailor (Basic Garments)",
+      "sector": "apparel",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["tailoring", "apparel", "retail", "garments"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["tailoring", "embroidery", "weaving"],
+      "skill_tags": ["tailoring", "sewing", "cutting", "measurement", "stitching"],
+      "core_skills": [
+        {"name": "Body measurement", "tag": "measurement"},
+        {"name": "Cutting & stitching garments", "tag": "cutting"},
+        {"name": "Machine operation & maintenance", "tag": "sewing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM Vishwakarma (verify eligibility)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "handloom-weaver",
+      "job_role": "Handloom Weaver",
+      "sector": "apparel",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 280,
+      "typical_local_demand_tags": ["handloom", "textiles", "apparel", "handicraft"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["weaving", "spinning", "tailoring"],
+      "skill_tags": ["weaving", "handloom", "warping", "yarn", "finishing"],
+      "core_skills": [
+        {"name": "Loom operation", "tag": "handloom"},
+        {"name": "Warping & yarn handling", "tag": "warping"},
+        {"name": "Fabric finishing", "tag": "finishing"}
+      ],
+      "schemes_supported": ["Handloom schemes (verify)", "PMKVY 4.0 (verify)", "RPL certification (verify)"]
+    },
+    {
+      "id": "general-duty-assistant",
+      "job_role": "General Duty Assistant (Home & Hospital)",
+      "sector": "healthcare",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["healthcare", "care", "hospital", "home_care"],
+      "self_employment_potential": "low",
+      "physical_demand": "medium",
+      "related_family_occupations": ["care", "community_service", "cooking"],
+      "skill_tags": ["patient_care", "hygiene", "mobility_support", "first_aid", "communication"],
+      "core_skills": [
+        {"name": "Patient mobility & daily care", "tag": "mobility_support"},
+        {"name": "Hygiene & infection basics", "tag": "hygiene"},
+        {"name": "First aid & vital signs", "tag": "first_aid"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Healthcare skill council roles (verify QP name)"]
+    },
+    {
+      "id": "community-health-assistant",
+      "job_role": "Community Health Assistant",
+      "sector": "healthcare",
+      "nsqf_level": 3,
+      "min_education": "grade12",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["healthcare", "community", "public_health", "care"],
+      "self_employment_potential": "low",
+      "physical_demand": "low",
+      "related_family_occupations": ["community_service", "care", "teaching"],
+      "skill_tags": ["community_health", "first_aid", "communication", "hygiene", "counselling"],
+      "core_skills": [
+        {"name": "Community health basics", "tag": "community_health"},
+        {"name": "Health education & counselling", "tag": "counselling"},
+        {"name": "Referral & record keeping", "tag": "communication"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "National/community health roles (verify current role names)"]
+    },
+    {
+      "id": "elderly-patient-care-attendant",
+      "job_role": "Elderly & Patient Care Attendant",
+      "sector": "healthcare",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 220,
+      "typical_local_demand_tags": ["care", "healthcare", "home_care"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["care", "community_service"],
+      "skill_tags": ["patient_care", "mobility_support", "hygiene", "first_aid", "companionship"],
+      "core_skills": [
+        {"name": "Elderly daily care support", "tag": "patient_care"},
+        {"name": "Safe lifting & mobility help", "tag": "mobility_support"},
+        {"name": "Emergency response basics", "tag": "first_aid"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Care-sector skill roles (verify QP)"]
+    },
+    {
+      "id": "yoga-wellness-trainer-basic",
+      "job_role": "Yoga & Wellness Trainer (Basic)",
+      "sector": "healthcare",
+      "nsqf_level": 4,
+      "min_education": "grade12",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["wellness", "yoga", "healthcare", "community"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["community_service", "teaching", "care"],
+      "skill_tags": ["yoga", "wellness", "communication", "first_aid"],
+      "core_skills": [
+        {"name": "Basic asana & pranayama instruction", "tag": "yoga"},
+        {"name": "Wellness counselling basics", "tag": "wellness"},
+        {"name": "Safety & first aid", "tag": "first_aid"}
+      ],
+      "schemes_supported": ["Yoga certification schemes (verify current names)", "PMKVY 4.0 (verify)"]
+    },
+    {
+      "id": "retail-sales-associate",
+      "job_role": "Retail Sales Associate",
+      "sector": "retail",
+      "nsqf_level": 3,
+      "min_education": "grade10",
+      "duration_hours": 180,
+      "typical_local_demand_tags": ["retail", "sales", "shop", "service"],
+      "self_employment_potential": "medium",
+      "physical_demand": "low",
+      "related_family_occupations": ["shop_keeping", "selling", "vegetable_selling"],
+      "skill_tags": ["sales", "retail", "customer_service", "billing", "stock"],
+      "core_skills": [
+        {"name": "Customer service & selling", "tag": "customer_service"},
+        {"name": "Billing & POS basics", "tag": "billing"},
+        {"name": "Stock & display handling", "tag": "stock"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "RPL certification (verify)"]
+    },
+    {
+      "id": "kirana-store-manager",
+      "job_role": "Kirana Store Owner / Self-Employed Retailer",
+      "sector": "retail",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["retail", "shop", "sales", "self_employment"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["shop_keeping", "selling", "farming"],
+      "skill_tags": ["retail", "stock", "billing", "customer_service", "money_management"],
+      "core_skills": [
+        {"name": "Inventory & stock ordering", "tag": "stock"},
+        {"name": "Basic book-keeping & digital payments", "tag": "money_management"},
+        {"name": "Customer relations", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["MUDRA loan (verify)", "PMKVY 4.0 entrepreneurship module (verify)", "PM-AJAY GIA (verify with MoSJE)"]
+    },
+    {
+      "id": "warehouse-logistics-associate",
+      "job_role": "Warehouse & Logistics Associate",
+      "sector": "retail",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 180,
+      "typical_local_demand_tags": ["warehouse", "logistics", "retail", "transport"],
+      "self_employment_potential": "low",
+      "physical_demand": "medium",
+      "related_family_occupations": ["labour", "shop_keeping", "driving"],
+      "skill_tags": ["warehouse", "packing", "loading", "inventory", "safety"],
+      "core_skills": [
+        {"name": "Goods handling & safety", "tag": "safety"},
+        {"name": "Packing & labelling", "tag": "packing"},
+        {"name": "Inventory record basics", "tag": "inventory"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Logistics skill roles (verify QP)"]
+    },
+    {
+      "id": "data-entry-operator",
+      "job_role": "Data Entry Operator",
+      "sector": "it_ites",
+      "nsqf_level": 4,
+      "min_education": "grade12",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["it", "computer", "office", "data"],
+      "self_employment_potential": "medium",
+      "physical_demand": "low",
+      "related_family_occupations": ["teaching", "office_work", "shop_keeping"],
+      "skill_tags": ["computer", "data_entry", "typing", "office", "english_basic"],
+      "core_skills": [
+        {"name": "Typing & data entry", "tag": "typing"},
+        {"name": "Spreadsheet basics", "tag": "office"},
+        {"name": "Basic English for software", "tag": "english_basic"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "IT-ITeS sector skill roles (verify)"]
+    },
+    {
+      "id": "copa-computer-operator",
+      "job_role": "Computer Operator & Programming Assistant (COPA)",
+      "sector": "it_ites",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 360,
+      "typical_local_demand_tags": ["it", "computer", "office", "repair"],
+      "self_employment_potential": "medium",
+      "physical_demand": "low",
+      "related_family_occupations": ["repair", "teaching", "shop_keeping"],
+      "skill_tags": ["computer", "data_entry", "office", "typing", "hardware"],
+      "core_skills": [
+        {"name": "Office software & documents", "tag": "office"},
+        {"name": "Computer hardware basics", "tag": "hardware"},
+        {"name": "Typing & data entry", "tag": "typing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "ITI/COPA trade (verify NCVET QP)"]
+    },
+    {
+      "id": "digital-marketing-associate",
+      "job_role": "Digital Marketing Associate (Basic)",
+      "sector": "it_ites",
+      "nsqf_level": 4,
+      "min_education": "grade12",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["it", "marketing", "retail", "self_employment"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["selling", "shop_keeping", "teaching"],
+      "skill_tags": ["marketing", "computer", "social_media", "content", "customer_service"],
+      "core_skills": [
+        {"name": "Social media for business", "tag": "social_media"},
+        {"name": "Basic content & graphics", "tag": "content"},
+        {"name": "Online customer handling", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Digital marketing roles (verify QP)"]
+    },
+    {
+      "id": "two-wheeler-repair-technician",
+      "job_role": "Two-Wheeler Repair Technician",
+      "sector": "automotive",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["automotive", "repair", "transport", "service"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["repair", "driving", "mechanic"],
+      "skill_tags": ["repair", "automotive", "engine", "maintenance", "tools"],
+      "core_skills": [
+        {"name": "Engine & brake servicing", "tag": "engine"},
+        {"name": "Electrical fault basics", "tag": "repair"},
+        {"name": "Tool handling & safety", "tag": "tools"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Automotive skill roles (verify)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "auto-service-technician",
+      "job_role": "Auto Service Technician (4-Wheeler Support)",
+      "sector": "automotive",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 360,
+      "typical_local_demand_tags": ["automotive", "repair", "transport", "service"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["repair", "mechanic", "driving"],
+      "skill_tags": ["automotive", "engine", "maintenance", "diagnostics", "tools"],
+      "core_skills": [
+        {"name": "Periodic maintenance work", "tag": "maintenance"},
+        {"name": "Diagnostics basics", "tag": "diagnostics"},
+        {"name": "Safety & tool discipline", "tag": "tools"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Automotive skill roles (verify QP)"]
+    },
+    {
+      "id": "beauty-therapist-basic",
+      "job_role": "Beauty Therapist (Basic)",
+      "sector": "beauty_wellness",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 220,
+      "typical_local_demand_tags": ["beauty", "wellness", "retail", "self_employment"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["beauty", "care", "shop_keeping"],
+      "skill_tags": ["beauty", "skincare", "hygiene", "customer_service", "makeup"],
+      "core_skills": [
+        {"name": "Skin care & facials", "tag": "skincare"},
+        {"name": "Hygiene & salon safety", "tag": "hygiene"},
+        {"name": "Customer consultation", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Beauty & wellness roles (verify QP)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "hair-stylist-barber",
+      "job_role": "Hair Stylist / Barber",
+      "sector": "beauty_wellness",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["beauty", "hair", "self_employment", "service"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["hair_cutting", "beauty", "care"],
+      "skill_tags": ["hair", "cutting", "styling", "hygiene", "customer_service"],
+      "core_skills": [
+        {"name": "Hair cutting & styling", "tag": "cutting"},
+        {"name": "Shave & grooming services", "tag": "styling"},
+        {"name": "Tool hygiene & safety", "tag": "hygiene"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "PM Vishwakarma (verify eligibility)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "spa-massage-therapist-basic",
+      "job_role": "Spa & Massage Therapist (Basic)",
+      "sector": "beauty_wellness",
+      "nsqf_level": 3,
+      "min_education": "grade8",
+      "duration_hours": 220,
+      "typical_local_demand_tags": ["spa", "wellness", "beauty", "hospitality"],
+      "self_employment_potential": "medium",
+      "physical_demand": "low",
+      "related_family_occupations": ["care", "beauty", "wellness"],
+      "skill_tags": ["spa", "massage", "hygiene", "anatomy_basic", "customer_service"],
+      "core_skills": [
+        {"name": "Basic massage techniques", "tag": "massage"},
+        {"name": "Body hygiene & draping", "tag": "hygiene"},
+        {"name": "Client comfort & safety", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Beauty & wellness roles (verify QP)"]
+    },
+    {
+      "id": "food-beverage-steward",
+      "job_role": "Food & Beverage Service Steward",
+      "sector": "hospitality",
+      "nsqf_level": 3,
+      "min_education": "grade10",
+      "duration_hours": 200,
+      "typical_local_demand_tags": ["hospitality", "food_service", "tourism", "service"],
+      "self_employment_potential": "low",
+      "physical_demand": "medium",
+      "related_family_occupations": ["cooking", "serving", "shop_keeping"],
+      "skill_tags": ["food_service", "hygiene", "customer_service", "billing", "communication"],
+      "core_skills": [
+        {"name": "Table service & etiquette", "tag": "food_service"},
+        {"name": "Hygiene & food safety basics", "tag": "hygiene"},
+        {"name": "Order taking & billing", "tag": "billing"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Hospitality skill roles (verify QP)"]
+    },
+    {
+      "id": "housekeeping-attendant",
+      "job_role": "Housekeeping Attendant",
+      "sector": "hospitality",
+      "nsqf_level": 2,
+      "min_education": "none",
+      "duration_hours": 160,
+      "typical_local_demand_tags": ["hospitality", "housekeeping", "service", "cleaning"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["cleaning", "care", "labour"],
+      "skill_tags": ["housekeeping", "cleaning", "hygiene", "safety", "customer_service"],
+      "core_skills": [
+        {"name": "Room & surface cleaning methods", "tag": "cleaning"},
+        {"name": "Chemical & safety basics", "tag": "safety"},
+        {"name": "Guest-area etiquette", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Hospitality skill roles (verify QP)"]
+    },
+    {
+      "id": "assistant-cook-indian-cuisine",
+      "job_role": "Assistant Cook (Indian Cuisine)",
+      "sector": "hospitality",
+      "nsqf_level": 3,
+      "min_education": "none",
+      "duration_hours": 240,
+      "typical_local_demand_tags": ["hospitality", "cooking", "food_service", "catering"],
+      "self_employment_potential": "high",
+      "physical_demand": "medium",
+      "related_family_occupations": ["cooking", "sweet_making", "food_service"],
+      "skill_tags": ["cooking", "hygiene", "cutting", "kitchen", "food_safety"],
+      "core_skills": [
+        {"name": "Indian dish preparation", "tag": "cooking"},
+        {"name": "Kitchen hygiene & food safety", "tag": "hygiene"},
+        {"name": "Mise-en-place & cutting", "tag": "cutting"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Hospitality skill roles (verify QP)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "mobile-phone-repair-technician",
+      "job_role": "Mobile Phone Repair Technician",
+      "sector": "electronics",
+      "nsqf_level": 3,
+      "min_education": "grade10",
+      "duration_hours": 260,
+      "typical_local_demand_tags": ["mobile", "repair", "electronics", "retail"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["repair", "shop_keeping", "electronics"],
+      "skill_tags": ["mobile_repair", "electronics_repair", "soldering", "troubleshooting", "customer_service"],
+      "core_skills": [
+        {"name": "Screen/battery/port repair", "tag": "troubleshooting"},
+        {"name": "Soldering & board basics", "tag": "soldering"},
+        {"name": "Software reset & customer handling", "tag": "customer_service"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Electronics repair roles (verify QP)", "MUDRA loan (verify)"]
+    },
+    {
+      "id": "consumer-electronics-repair-technician",
+      "job_role": "Consumer Electronics Repair Technician",
+      "sector": "electronics",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 320,
+      "typical_local_demand_tags": ["electronics", "repair", "service", "retail"],
+      "self_employment_potential": "high",
+      "physical_demand": "low",
+      "related_family_occupations": ["repair", "electronics", "electrician"],
+      "skill_tags": ["electronics_repair", "troubleshooting", "soldering", "safety", "testing"],
+      "core_skills": [
+        {"name": "TV/radio/adapter repair basics", "tag": "troubleshooting"},
+        {"name": "Circuit testing & soldering", "tag": "soldering"},
+        {"name": "Electrical safety", "tag": "safety"}
+      ],
+      "schemes_supported": ["PMKVY 4.0 (verify)", "Electronics skill roles (verify QP)"]
+    },
+    {
+      "id": "waste-segregation-mrf-worker",
+      "job_role": "Waste Segregation & MRF Worker",
+      "sector": "green_jobs",
+      "nsqf_level": 2,
+      "min_education": "none",
+      "duration_hours": 120,
+      "typical_local_demand_tags": ["waste_management", "green_energy", "sanitation", "municipal"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["cleaning", "labour", "scrap_dealing"],
+      "skill_tags": ["waste_management", "sorting", "safety", "hygiene", "compost"],
+      "core_skills": [
+        {"name": "Wet/dry/hazardous segregation", "tag": "sorting"},
+        {"name": "PPE & safety discipline", "tag": "safety"},
+        {"name": "Compost & recycling basics", "tag": "compost"}
+      ],
+      "schemes_supported": ["Urban livelihoods / ULB waste-management roles (verify)", "PMKVY 4.0 (verify)"]
+    },
+    {
+      "id": "solar-water-pump-technician",
+      "job_role": "Solar Water Pump Technician",
+      "sector": "green_jobs",
+      "nsqf_level": 4,
+      "min_education": "grade10",
+      "duration_hours": 300,
+      "typical_local_demand_tags": ["solar", "irrigation", "green_energy", "agriculture"],
+      "self_employment_potential": "medium",
+      "physical_demand": "medium",
+      "related_family_occupations": ["farming", "plumbing", "electrical", "repair"],
+      "skill_tags": ["solar", "irrigation", "pump", "maintenance", "electrical"],
+      "core_skills": [
+        {"name": "Pump installation & alignment", "tag": "pump"},
+        {"name": "Solar panel & controller basics", "tag": "solar"},
+        {"name": "Preventive maintenance", "tag": "maintenance"}
+      ],
+      "schemes_supported": ["Solar pump schemes (verify current names)", "PMKVY 4.0 (verify)"]
+    }
+  ]
+}

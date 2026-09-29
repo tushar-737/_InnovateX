@@ -1,0 +1,30 @@
+# One-command local demo:  docker compose up --build
+# Frontend: http://localhost:8080   Backend API: http://localhost:8000
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      # Put your key in .env at repo root (see .env.example) — or leave empty and the
+      # rule-based Hindi dialogue engine runs the conversation (fully working demo).
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-sonnet-4-5}
+      - DATABASE_URL=sqlite:////data/kaushal_saathi.db
+    volumes:
+      - app-data:/data
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  app-data:
