@@ -1,0 +1,108 @@
+{
+  "_notice": "ILLUSTRATIVE SEED DATA — NOT OFFICIAL. District demand tags and training centres below are MOCK values invented for the SIH 2026 prototype demo. They must be replaced with verified data from the District Skill Committees, state skill missions, NCS (ncs.gov.in) local demand analytics and the official PMKVY centre locator before any real use. Distance figures are illustrative only.",
+  "_source_status": "MOCK / SEED — every centre name, distance and demand tag needs verification.",
+  "districts": [
+    {
+      "id": "gonda-up",
+      "name": "Gonda",
+      "state": "Uttar Pradesh",
+      "aliases": ["gonda", "गोंडा", "gonda up", "gonda, uttar pradesh"],
+      "demand_tags": ["farming", "agriculture", "dairy", "food_processing", "apparel", "tailoring", "construction", "retail", "care", "housekeeping"],
+      "demand_summary_hi": "कृषि, डेयरी, खाद्य प्रसंस्करण और सिलाई-कपड़ा काम की स्थानिक माँग दिखती है (डेमो डेटा)।",
+      "training_centers": [
+        {
+          "name": "जिला कौशल केंद्र (डेमो) / District Skill Centre (Demo)",
+          "sector_tags": ["apparel", "tailoring", "food_processing", "retail"],
+          "distance_km": 8,
+          "note": "MOCK — verify with District Skill Committee"
+        },
+        {
+          "name": "कृषि प्रशिक्षण केंद्र (डेमो) / Agri Training Centre (Demo)",
+          "sector_tags": ["agriculture", "dairy", "green_jobs"],
+          "distance_km": 15,
+          "note": "MOCK — verify with state agriculture/skill department"
+        },
+        {
+          "name": "आईटीआई गोंडा (डेमो) / ITI Gonda (Demo)",
+          "sector_tags": ["electrical", "automotive", "construction", "plumbing", "electronics"],
+          "distance_km": 12,
+          "note": "MOCK — verify institute and trades offered"
+        },
+        {
+          "name": "स्वास्थ्य सहायक प्रशिक्षण केंद्र (डेमो) / Healthcare Support Training Centre (Demo)",
+          "sector_tags": ["healthcare", "care"],
+          "distance_km": 20,
+          "note": "MOCK — verify"
+        }
+      ]
+    },
+    {
+      "id": "barmer-raj",
+      "name": "Barmer",
+      "state": "Rajasthan",
+      "aliases": ["barmer", "बाड़मेर", "barmer rajasthan"],
+      "demand_tags": ["solar", "green_energy", "construction", "apparel", "handloom", "embroidery", "retail", "automotive", "beauty"],
+      "demand_summary_hi": "सौर ऊर्जा, निर्माण, हथकरघा-कढ़ाई और खुदरा काम की स्थानिक माँग दिखती है (डेमो डेटा)।",
+      "training_centers": [
+        {
+          "name": "सौर कौशल केंद्र (डेमो) / Solar Skill Centre (Demo)",
+          "sector_tags": ["electrical", "green_jobs", "solar"],
+          "distance_km": 10,
+          "note": "MOCK — verify with state skill mission"
+        },
+        {
+          "name": "हस्तशिल्प एवं कपड़ा प्रशिक्षण केंद्र (डेमो) / Handicraft & Textile Training Centre (Demo)",
+          "sector_tags": ["apparel", "handloom", "embroidery", "tailoring"],
+          "distance_km": 6,
+          "note": "MOCK — verify"
+        },
+        {
+          "name": "आईटीआई बाड़मेर (डेमो) / ITI Barmer (Demo)",
+          "sector_tags": ["construction", "automotive", "plumbing", "electrical", "electronics"],
+          "distance_km": 14,
+          "note": "MOCK — verify institute and trades"
+        },
+        {
+          "name": "ग्रामीण उद्यम केंद्र (डेमो) / Rural Enterprise Centre (Demo)",
+          "sector_tags": ["retail", "beauty_wellness", "hospitality", "food_processing"],
+          "distance_km": 18,
+          "note": "MOCK — verify"
+        }
+      ]
+    },
+    {
+      "id": "alirajpur-mp",
+      "name": "Alirajpur",
+      "state": "Madhya Pradesh",
+      "aliases": ["alirajpur", "अलीराजपुर", "ali rajpur"],
+      "demand_tags": ["farming", "dairy", "food_processing", "construction", "apparel", "beauty", "hospitality", "waste_management", "retail"],
+      "demand_summary_hi": "कृषि-डेयरी, खाद्य प्रसंस्करण, निर्माण और आतिथ्य काम की स्थानिक माँग दिखती है (डेमो डेटा)।",
+      "training_centers": [
+        {
+          "name": "जिला कौशल केंद्र (डेमो) / District Skill Centre (Demo)",
+          "sector_tags": ["food_processing", "retail", "hospitality", "beauty_wellness"],
+          "distance_km": 5,
+          "note": "MOCK — verify with District Skill Committee"
+        },
+        {
+          "name": "कृषि एवं डेयरी केंद्र (डेमो) / Agri & Dairy Centre (Demo)",
+          "sector_tags": ["agriculture", "dairy", "green_jobs"],
+          "distance_km": 12,
+          "note": "MOCK — verify"
+        },
+        {
+          "name": "आईटीआई अलीराजपुर (डेमो) / ITI Alirajpur (Demo)",
+          "sector_tags": ["construction", "electrical", "plumbing", "automotive", "electronics"],
+          "distance_km": 16,
+          "note": "MOCK — verify institute and trades"
+        },
+        {
+          "name": "सामुदायिक स्वास्थ्य प्रशिक्षण केंद्र (डेमो) / Community Health Training Centre (Demo)",
+          "sector_tags": ["healthcare", "care"],
+          "distance_km": 22,
+          "note": "MOCK — verify"
+        }
+      ]
+    }
+  ]
+}

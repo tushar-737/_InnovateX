@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Nunito', 'Noto Sans Devanagari', system-ui, sans-serif;
+}
+
+body {
+  @apply bg-cream text-ink antialiased;
+  margin: 0;
+  min-height: 100vh;
+}
+
+@layer components {
+  .btn-big {
+    @apply min-h-touch px-6 py-4 rounded-2xl text-2xl font-bold shadow-md
+      active:scale-95 transition-transform flex items-center justify-center gap-3
+      focus:outline-none focus:ring-4 focus:ring-sky/50;
+  }
+  .card {
+    @apply bg-white rounded-3xl shadow-lg p-5 border-2 border-ink/10;
+  }
+}
