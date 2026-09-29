@@ -1,244 +1,158 @@
-# कौशल साथी · Kaushal Saathi
+# Kaushal Saathi (कौशल साथी)
 
-**AI-Driven Voice Assistant for Livelihood Mapping and NSQF-Aligned Skilling
-Recommendations for SC Communities under the GIA component of PM-AJAY (MoSJE)**
+**Smart India Hackathon 2026 — Problem Statement 26097**
 
-Smart India Hackathon 2026 — Problem Statement **26097** · Demo-ready prototype
+A voice assistant that helps people from SC communities find skilling and livelihood options under the GIA component of PM-AJAY (MoSJE).
 
-> A beneficiary with low literacy talks to a warm voice assistant in Hindi
-> (Hinglish-friendly). The assistant holds a conversation — not a form — builds a
-> structured profile, and recommends the **top 3 NSQF-aligned skilling and
-> livelihood pathways** with a visible, transparent score. An officials'
-> dashboard (aggregated, anonymised) is planned — see [Roadmap](#roadmap).
+## The problem
 
----
+Skilling websites are full of forms and English words. A person who has not been to school cannot use them. So we thought — why not let the person just talk?
 
-## ⚡ Quick start (one command)
+## What we built
 
-**Option A — Docker:**
-```bash
+Kaushal Saathi is a voice assistant in Hindi. It talks to the person like a friend, asks simple questions one at a time — age, district, education, what work the family does, what they already know, and so on — and builds a profile by talking. No forms, no jargon.
+
+Then it suggests the **top 3 training and work options** (NSQF-aligned job roles) that suit the person. For every suggestion it shows:
+
+- why it fits (in simple Hindi)
+- what skills they already have and what they will learn in training
+- how long the training is and where the nearest centre is
+- one government scheme name to check (only as a pointer — we never claim eligibility)
+
+Every card also has a **"यह क्यों? / Why this?"** button. It opens the actual score breakdown — 5 numbers with weights and a reason for each. Nothing is hidden inside a black box.
+
+At the end there is a simulated SMS/WhatsApp summary screen and a "delete my data" button that really deletes everything.
+
+## How to run it
+
+**Using Docker:**
+```
 docker compose up --build
-# open http://localhost:8080
 ```
+Open http://localhost:8080
 
-**Option B — without Docker:**
-```bash
+**Without Docker:**
+```
 bash scripts/dev.sh
-# open http://localhost:5173
+```
+Open http://localhost:5173
+
+That's it. The demo does not need internet and does not need any API key.
+
+If you have an Anthropic API key, copy `.env.example` to `.env` and put it there. Then the conversation is powered by Claude and feels more natural. Without the key, our own Hindi rule engine runs the whole conversation — the demo still works fine. (The key stays on the backend, never in the browser.)
+
+## Try it in 2 minutes
+
+1. Open the app. Press the speaker button — the consent is read out loud in Hindi. Press **हाँ, आगे बढ़ें**.
+2. Press the big mic and answer, or just tap the answer chips. Try this conversation:
+   - "मेरा नाम सुनीता है"
+   - "तीस साल"
+   - "मैं गोंडा से हूँ"
+   - "दसवीं तक पढ़ी हूँ"
+   - "घर में सब खेती करते हैं"
+   - "अभी खेत में मज़दूरी करती हूँ"
+   - "मुझे सिलाई आती है, खाना भी बना लेती हूँ"
+   - "कपड़ों का काम पसंद है"
+   - "घुटनों में दर्द रहता है, भारी काम नहीं कर पाती"
+   - "मुझे अपना छोटा काम शुरू करना है"
+   - "हाँ, दस-बीस किलोमीटर जा सकती हूँ"
+3. The assistant reads your whole profile back ("आपने बताया कि…"). Say "हाँ, सही है" or tap any field to change it.
+4. You get 3 cards. Press the speaker icon on a card to hear it, and open "यह क्यों?" to see the scoring.
+5. Press "मेरा डेटा मिटाएँ" — all your data is really deleted.
+
+A longer 3-minute walkthrough for the presentation is in `docs/DEMO_SCRIPT.md`.
+
+## How a suggestion is scored
+
+```
+score = 30%  how well the role matches your profile and background (TF-IDF text match)
+        20%  education eligibility (you meet the minimum or not)
+        20%  demand in your district
+        15%  physical and travel fit
+        15%  job vs self-employment preference
 ```
 
-**Optional — enable the LLM brain:** copy `.env.example` to `.env` at the repo root and
-add your `ANTHROPIC_API_KEY`. Without a key, the built-in Hindi rule engine runs the
-whole conversation — the demo still works end to end (and is fully offline-capable).
+These 5 numbers are exactly what the "why this?" box shows. The engine runs completely offline on our seed data.
 
-**Run tests:**
-```bash
-.venv/bin/python -m pytest backend/tests -q        # 48 tests
+## How the code is organised
+
+```
+backend/         FastAPI app
+  app/services/    dialogue engine, Hindi answer parser, recommendation engine
+  app/routers/     conversation, recommendations, session + delete-my-data
+  tests/           62 tests (parser, scorer, conversation, API)
+frontend/        React + Vite + Tailwind app (Consent → Chat → Confirm → Results)
+  src/speech/      browser speech adapters (swap in Bhashini/Whisper later)
+seed_data/       job roles + districts (clearly marked as demo data)
+docs/            demo script + data sources
 ```
 
----
-
-## 🧭 What is implemented vs. designed (honest status)
-
-| Piece | Status |
-|---|---|
-| Voice conversation flow (mic, live transcript, spoken replies, tap fallback) | ✅ implemented |
-| LLM slot-filling (Claude, JSON turn contract) + rule-based Hindi fallback engine | ✅ implemented |
-| Confirmation read-back + corrections by voice/text | ✅ implemented |
-| Recommendation engine (TF-IDF + weighted score, breakdown visible) | ✅ implemented |
-| Results screen (3 cards, play-back, skill-gap bars, simulated SMS/WhatsApp summary) | ✅ implemented |
-| Consent screen (voice-readable) + "delete my data" endpoint | ✅ implemented |
-| Browser STT/TTS adapters (Web Speech API, `hi-IN`) behind swappable interfaces | ✅ implemented (browser) |
-| Bhashini / Whisper speech adapters | 📐 designed (interfaces only — `backend/app/adapters/speech.py`) |
-| Officials' dashboard (Recharts) | 📐 next (agreed stop-point) |
-| 30/60/90-day follow-up simulation | 📐 planned |
-| IVR (DTMF) + WhatsApp voice-note channel pages | 📐 planned (mock-up diagrams) |
-
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
-    subgraph Browser["Browser (mobile-first React + Vite + Tailwind)"]
-        MIC["🎤 Mic button\nWeb Speech STT hi-IN"] --> CHAT["Chat screen\nlive transcript + tap options"]
-        CHAT --> TTS["🔊 SpeechSynthesis hi-IN"]
-        CHAT --> CONF["✅ Confirmation screen\n'Aapne bataya ki...' + edits"]
-        CONF --> RES["🎯 Results screen\n3 cards + why-this panel"]
-        RES --> SMS["📤 Send summary\nSIMULATED SMS/WhatsApp preview"]
-    end
-
-    subgraph Backend["FastAPI backend (Python)"]
-        API["REST /api"] --> DIALOGUE["Dialogue engine\nLLM + rules merge"]
-        DIALOGUE --> LLM["Claude adapter\n(.env key, backend only)"]
-        DIALOGUE --> PARSER["Deterministic\nHindi/Hinglish parser"]
-        API --> REC["Recommendation engine\nTF-IDF + weighted score\nworks 100% offline"]
-        API --> PRIVACY["Consent + delete-my-data"]
-    end
-
-    subgraph Data["Local seed data (ILLUSTRATIVE)"]
-        ROLES["nsqf_job_roles.json\n~42 roles, 13 sectors"]
-        DIST["districts.json\n3 districts + mock centres"]
-    end
-
-    CHAT -->|POST /api/conversation/turn| API
-    CONF -->|POST /api/conversation/confirm| API
-    RES -->|POST /api/recommend| API
-    REC --> ROLES
-    REC --> DIST
-    PRIVACY --> DB[("SQLite\n(portable to PostgreSQL)")]
-    DIALOGUE --> DB
+    A[Mobile app - React] -- "talk / tap" --> B[Chat screen]
+    B -- "POST /api/conversation/turn" --> C[FastAPI backend]
+    C --> D[Claude - optional]
+    C --> E[Hindi rule engine + answer parser]
+    C --> F[(SQLite)]
+    A --> G[Confirm screen]
+    G -- "POST /api/conversation/confirm" --> C
+    A --> H[Results - 3 cards]
+    H -- "POST /api/recommend" --> I[Recommendation engine]
+    I --> J[(seed_data - job roles + districts)]
 ```
 
-### Conversation turn contract (LLM ↔ backend)
+## What is real and what is fake
 
-```json
-{
-  "reply_text": "…Hindi reply + one question…",
-  "reply_text_en": "…English translation…",
-  "extracted_fields": {"age": 25, "district": "Gonda", "skills": ["sewing"]},
-  "missing_fields": ["education", "preference"],
-  "is_complete": false
-}
-```
+We want to be honest here, because this is a prototype:
 
-### Recommendation score (transparent, no black box)
+- **The data is made up for the demo.** The 42 job roles and the 3 districts (Gonda, Barmer, Alirajpur) are hand-written by us. Every file in `seed_data/` says this at the top. The real version will use official NCVET/NSQF qualification packs, NSDC and NCS data (list below).
+- **No salary, placement or eligibility claims anywhere.** Where we are not sure, we only use low / medium / high. Scheme names are pointers to check, and every one of them contains the word "verify" on purpose.
+- **Training centres and distances are dummy values** made for the demo.
+- **Speech uses the browser's Web Speech API** (works in Chrome/Edge, needs HTTPS or localhost). For production we would use Bhashini or Whisper — the adapter interface is already there (`backend/app/adapters/speech.py`) but not connected.
+- **The SMS/WhatsApp summary is only a preview.** Nothing is actually sent. Real sending needs SMS DLT registration and WhatsApp Business API.
+- **Not built yet:** officials' dashboard, 30/60/90-day follow-up calls, IVR and WhatsApp channels. These are the next steps below.
+- **Not done for production:** login, security hardening, formal accessibility audit.
 
-```
-score = 0.30 · similarity    TF-IDF cosine(profile, role) ×2, capped at 1
-      + 0.20 · education     1.0 eligible · 0.25 near-miss (bridge course) · 0 otherwise
-      + 0.20 · demand        matching district demand tags ÷ 2, capped at 1
-      + 0.15 · mobility      0.7 · physical-fit + 0.3 · travel-fit (centre distance)
-      + 0.15 · preference    self-employment potential vs stated preference
-```
+## Next steps
 
-Every component (0–1) is returned with a plain-language note and rendered in the
-**"यह क्यों? / Why this?"** panel on each result card.
+1. Officials' dashboard — district-wise graphs of profiles, top suggested roles, common skill gaps, demand vs available training.
+2. 30/60/90-day follow-up call simulation (enrolled / completed / placed).
+3. IVR flow for feature phones and WhatsApp voice-note channel.
+4. Replace seed data with real official data (see below) and connect Bhashini speech.
 
-## 📁 Folder structure
+## Official data sources to plug in later
 
-```
-sih/
-├── backend/
-│   ├── app/
-│   │   ├── main.py            FastAPI app
-│   │   ├── config.py          settings (.env)
-│   │   ├── database.py        SQLAlchemy 2.0 — SQLite ↔ PostgreSQL portable
-│   │   ├── models.py          sessions / profiles / conversation_turns
-│   │   ├── schemas.py         typed Pydantic models (Profile, TurnResponse, Recommendation…)
-│   │   ├── routers/           conversation · recommend · session(consent/delete) · meta
-│   │   ├── services/
-│   │   │   ├── dialogue.py    turn orchestration (LLM + rules merge)
-│   │   │   ├── llm.py         Claude adapter + JSON parser + graceful fallback
-│   │   │   ├── extraction.py  deterministic Hindi/Hinglish profile parser
-│   │   │   ├── recommender.py TF-IDF + weighted scorer
-│   │   │   └── seed_loader.py cached seed data (offline)
-│   │   └── adapters/speech.py STT/TTS adapter interfaces (Bhashini/Whisper ready)
-│   └── tests/                 test_extraction · test_recommender · test_api (48 tests)
-├── frontend/
-│   └── src/
-│       ├── speech/            stt.js / tts.js (Web Speech API adapters)
-│       ├── pages/             Consent → Chat → Confirm → Results
-│       └── components/        MicButton · TapOptions · ResultCard · WhyPanel · SendSummaryModal
-├── seed_data/                 ILLUSTRATIVE datasets (see seed_data/README.md)
-├── docs/                      DEMO_SCRIPT.md · DATA_SOURCES.md
-├── Dockerfile · docker-compose.yml · scripts/dev.sh · .env.example
-└── README.md
-```
-
-## 📱 How to test each feature
-
-1. **Consent** — open the app → 🔊 button reads consent aloud → "हाँ, आगे बढ़ें".
-2. **Voice conversation** — press the 🎤 button, speak in Hindi/Hinglish
-   ("मेरा नाम राहुल है", "25 साल", "गोंडा से हूँ"…). Watch the live transcript,
-   the spoken reply, and the slot chips fill. Blocked? Tap the quick-answer chips
-   or type in the box — both are full fallbacks (shown automatically after 2
-   speech failures).
-3. **Confirmation** — when all slots are filled the assistant reads the profile
-   back ("आपने बताया कि…"). Tap any field to edit, or say/type a correction
-   ("umar 26 hai").
-4. **Results** — 3 large cards. Press ▶ on any card to hear it. Open
-   "यह क्यों?" to see the 5-part score breakdown with weights and notes.
-   Check the skill-gap bars (values are real ratios, clamped 0–100).
-5. **Send summary** — 📤 button → SMS/WhatsApp preview (clearly *simulated*).
-6. **Privacy** — 🗑️ "मेरा डेटा मिटाएँ" calls `DELETE /api/session/{id}` and wipes
-   turns + profile + session.
-7. **Offline/reliability** — stop the backend → the app shows a friendly error;
-   the recommendation engine itself needs no internet (cached seed data), and
-   with no `ANTHROPIC_API_KEY` the conversation runs on the rule engine.
-
-## 🔌 API surface
-
-| Method | Path | Purpose |
-|---|---|---|
-| POST | `/api/session` | create session + record consent |
-| POST | `/api/conversation/turn` | one conversation turn → `TurnResponse` |
-| POST | `/api/conversation/confirm` | read-back + corrections + confirm |
-| POST | `/api/recommend` | top-3 recommendations + score breakdowns |
-| DELETE | `/api/session/{id}` | **delete my data** |
-| GET | `/api/health`, `/api/meta` | health + honesty/data notices |
-| GET | `/docs` | OpenAPI (auto) |
-
-## ⚠️ Limitations and next steps — what is mocked, honestly
-
-1. **All seed data is ILLUSTRATIVE** (`seed_data/`, labelled in every file). Job
-   roles, NSQF levels, durations, district demand tags and training centres are
-   hand-invented for the demo. Replace with official NCVET/NSQF **Qualification
-   Packs**, **NCS** role data, and verified District Skill Committee data.
-2. **No salary, placement or eligibility claims.** Demand and self-employment
-   potential are qualitative `low/medium/high` editorial judgements. Scheme names
-   are **pointers to verify** (every string contains "verify"), never eligibility
-   statements.
-3. **Speech is browser-only in the demo.** Web Speech API STT/TTS (`hi-IN`) works
-   in Chrome/Edge over HTTPS; recognition quality varies with network and accent.
-   Bhashini and Whisper adapters are **designed (interfaces) but not connected**.
-   Romanised-Hindi TTS pronunciation can be imperfect.
-4. **The LLM is optional.** With `ANTHROPIC_API_KEY` the conversation is richer
-   (Claude drives the slot-filling with the JSON contract); without it a
-   deterministic Hindi rule engine asks the same questions. Either way the
-   extracted fields are cross-checked by the parser.
-5. **The recommender is a transparent prototype scorer** — TF-IDF + fixed
-   weights chosen for demo sanity, not validated against real outcomes. No
-   causal claims ("this training will get you a job") are made anywhere.
-6. **District coverage is 3 districts** (Gonda UP, Barmer RJ, Alirajpur MP) with
-   mock demand. Any real rollout needs district-level labour-market data
-   (e.g. PLFS, NCS local demand, e-Shram distributions).
-7. **SMS/WhatsApp sending is simulated** (preview only). Real sending needs SMS
-   DLT registration and WhatsApp Business API approval.
-8. **Security/compliance for production** not implemented: auth, rate-limiting,
-   encryption at rest, DPDP-Act consent artefacts, audit logs.
-9. **Accessibility**: large targets, high contrast, audio on every screen, and
-   tap fallbacks are implemented; screen-reader coverage and formal WCAG audit
-   are next steps.
-
-## 🗺️ Roadmap (next in priority order)
-
-1. Officials' dashboard — aggregated, anonymised (Recharts): profiles by
-   district, top recommended roles, common skill gaps, demand vs
-   available-training gap, dropout-risk flags (demo data, labelled).
-2. 30/60/90-day follow-up call simulation feeding the dashboard.
-3. Channel mock-ups: IVR (DTMF) flow + WhatsApp voice-note — clearly marking
-   implemented vs designed.
-4. Bhashini/Whisper adapter implementations behind the existing interfaces.
-
-## 📚 Official data sources to plug in later
-
-| Source | What it fixes |
+| Source | For what |
 |---|---|
-| **NCVET / NSQF Qualification Packs (QPs)** | real job roles, NSQF levels, duration, curriculum |
-| **NSDC / PMKVY centre locator** | real training centres, seats, geolocation |
-| **NCS (National Career Service)** | local labour demand, occupation data |
-| **e-Shram** | registered worker demographics (anonymised aggregates) |
-| **PLFS (MoSPI)** | district/region livelihood and employment indicators |
-| **Udyam registry** | local micro-enterprise ecosystem for self-employment fit |
-| **Bhashini** | production-grade Indian-language STT/TTS/translation |
-| **MoSJE / PM-AJAY guidelines** | scheme rules and eligibility (verified, not assumed) |
+| NCVET / NSQF Qualification Packs | real job roles, NSQF levels, course duration |
+| NSDC / PMKVY centre locator | real training centres near the person |
+| NCS (National Career Service) | local job demand |
+| e-Shram | worker data (aggregated, anonymised) |
+| PLFS (MoSPI) | district-level livelihood and employment data |
+| Udyam | local small businesses — for self-employment ideas |
+| Bhashini | Indian language speech (STT/TTS) |
+| MoSJE / PM-AJAY guidelines | actual scheme names and eligibility rules |
 
-See `docs/DATA_SOURCES.md` for details and `docs/DEMO_SCRIPT.md` for the
-3-minute walkthrough with a sample Hindi conversation + English translation.
+More detail is in `docs/DATA_SOURCES.md`.
 
-## 🧪 Development notes
+## Running the tests
 
-- Backend tests: `cd backend && ../.venv/bin/python -m pytest tests -q`
-- The DB schema is SQLAlchemy 2.0 and runs unchanged on PostgreSQL
-  (`DATABASE_URL=postgresql://…`).
-- The LLM key never reaches the browser: the frontend only calls `/api/*`,
-  proxied by Vite (dev) or nginx (Docker).
+```
+cd backend && ../.venv/bin/python -m pytest tests -q
+```
+
+62 tests cover the Hindi answer parser, the scoring engine, the full conversation flow and the API.
+
+## Tech stack
+
+- Frontend: React + Vite + Tailwind (mobile-first, big buttons)
+- Backend: FastAPI + SQLite (same schema runs on PostgreSQL)
+- Speech: browser Web Speech API, behind an adapter
+- LLM: Claude via backend `.env` (optional)
+- Recommendations: TF-IDF + weighted rules — simple and explainable on purpose
+
+## Team note
+
+Everything here runs end to end. If something breaks or you want a change, the demo is designed so it still works offline and without an API key — the two things that usually break during a hackathon demo.
